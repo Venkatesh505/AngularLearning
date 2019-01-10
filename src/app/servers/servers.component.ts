@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 addNewServer=false;
 newserverstatus="No Server Created";
-textentered='';
+textentered='Initialtext';
   constructor() {
     setTimeout(() => {this.addNewServer=true;},2000)
    }
@@ -19,7 +19,7 @@ textentered='';
   }
 onServerCreate() 
 {
-this.newserverstatus="New Server Created";
+this.newserverstatus="New Server Created is " + this.textentered;
 }
 enterservername(event: Event)
 {
