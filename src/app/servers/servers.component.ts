@@ -9,21 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 addNewServer=false;
+serverstatus=false;
 newserverstatus="No Server Created";
-textentered='Initialtext';
+servers=["Server1","Server2"];
+textentered='';
   constructor() {
-    setTimeout(() => {this.addNewServer=true;},2000)
+    // setTimeout(() => {this.addNewServer=true;},2000)
    }
 
   ngOnInit() {
   }
 onServerCreate() 
 {
+  this.serverstatus=true;
+  this.servers.push(this.textentered);
 this.newserverstatus="New Server Created is " + this.textentered;
+this.textentered='';
 }
 enterservername(event: Event)
 {
-  console.log(event);
- this.textentered=(<HTMLInputElement>event.target).value;
+ // console.log(event);
+// this.textentered=(<HTMLInputElement>event.target).value;
+
 }
 }

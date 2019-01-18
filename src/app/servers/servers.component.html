@@ -1,10 +1,16 @@
 <label>Input Server name: </label><br>
-<input type="text" class="form-control" (input)="enterservername($event)"/>
+<!-- <input type="text" id="textbox1" class="form-control" (input)="enterservername($event)"/> -->
 <input type="text" class="form-control" [(ngModel)]="textentered"/>
 <br>
 <p>{{textentered}}</p>
-<button class="btn btn-primary" [disabled]="!addNewServer" (click)="onServerCreate()">AddNewServer</button>
+<button class="btn btn-primary" [disabled]="textentered === ''" (click)="onServerCreate()">AddNewServer</button>
 <br>
-<p>{{newserverstatus}}</p>
-<!-- <app-server></app-server>
-<app-server></app-server> -->
+<!-- <p>{{newserverstatus}}</p> -->
+<p *ngIf="serverstatus; else noServer">{{newserverstatus}}</p>
+<ng-template #noServer>
+<p>
+    No Server was created!
+</p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
+

@@ -1,1 +1,3 @@
-<h4>This is {{serverName}} componenet with ID {{serverID}} with status {{serverstatus()}}</h4>
+<h4 [ngStyle]="{backgroundColor:backgroundcolor()}"
+[ngClass]="{online:serverStatus1==='online'}"
+>This is {{serverName}} componenet with ID {{serverID}} with status {{serverstatus()}}</h4>
