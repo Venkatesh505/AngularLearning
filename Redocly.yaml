@@ -13,7 +13,7 @@ rules:
     subject:
       type: Operation
       property: summary
-    message: Operation summary must be sentence cased.
+    message: Operation summary must be sentence cased1.
     assertions:
       pattern: /^([A-Z]{2,}|[A-Z][^A-Z]*)\b(\s+(?:[A-Z]{2,}|[^A-Z]*)\b)*$/ # Sentence case but allow acronyms
   rule/example-summary-sentence-case:
